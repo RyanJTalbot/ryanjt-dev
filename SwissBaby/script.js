@@ -9,7 +9,7 @@ const loading = document.getElementById('loading');
 
 const currentYear = new Date().getFullYear();
 
-const babyTime = new Date(`December 09 2020 00:00:00`);
+const babyTime = new Date(`December 04 2020 00:08:00`);
 
 // Set background year
 // year.innerText = currentYear +1;
