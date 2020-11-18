@@ -1,4 +1,4 @@
-const weeks = document.getElementById('weeks');
+// const weeks = document.getElementById('weeks');
 const days = document.getElementById('days');
 const hours = document.getElementById('hours');
 const minutes = document.getElementById('minutes');
@@ -20,15 +20,15 @@ function updateCountdown() {
   const currentTime = new Date();
   const diff = babyTime - currentTime;
 
-  const w = Math.floor(diff / 1000 / 60 / 60 / 24 / 7);
-  const d = Math.floor(diff / 1000 / 60 / 60 / 24) % 7;
+//   const w = Math.floor(diff / 1000 / 60 / 60 / 24 / 7);
+  const d = Math.floor(diff / 1000 / 60 / 60 / 24) ;
   const h = Math.floor((diff / 1000 / 60 / 60) % 24)+8;
   const m = Math.floor(diff / 1000 / 60) % 60;
   const s = Math.floor(diff / 1000) % 60;
 
 
   // Add values to DOM
-  weeks.innerHTML = w;
+//   weeks.innerHTML = w;
   days.innerHTML = d;
   hours.innerHTML = h < 10 ? '0' + h: h;
   minutes.innerHTML = m < 10 ? '0' + m: m;
