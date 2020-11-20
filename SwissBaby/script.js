@@ -9,7 +9,7 @@ const loading = document.getElementById('loading');
 
 const currentYear = new Date().getFullYear();
 
-const babyTime = new Date(`December 04 2020 00:08:00`);
+const babyTime = new Date(`December 04 2020 00:13:00`);
 
 // Set background year
 // year.innerText = currentYear +1;
@@ -22,7 +22,7 @@ function updateCountdown() {
 
 //   const w = Math.floor(diff / 1000 / 60 / 60 / 24 / 7);
   const d = Math.floor(diff / 1000 / 60 / 60 / 24) ;
-  const h = Math.floor((diff / 1000 / 60 / 60) % 24)+8;
+  const h = Math.floor((diff / 1000 / 60 / 60) % 24)+13;
   const m = Math.floor(diff / 1000 / 60) % 60;
   const s = Math.floor(diff / 1000) % 60;
 
