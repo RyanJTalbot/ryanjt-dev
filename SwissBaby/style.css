@@ -36,7 +36,7 @@ body * {
   z-index: 1;
 }
 
-h1 {
+/* h1 {
   font-size: 60px;
   margin: -80px 0 40px;
 }
@@ -51,9 +51,9 @@ h1 {
   transform: translateX(-50%);
 }
 
-.countdown {
+.countdown { */
   /* display: flex; */
-  display: none;
+/*   display: none;
   transform: scale(2);
 }
 
@@ -67,7 +67,30 @@ h1 {
 
 .time h2 {
   margin: 0 0 5px;
+} */
+
+
+.countup {
+  text-align: center;
+  margin-bottom: 20px;
 }
+.countup .timeel {
+  display: inline-block;
+  padding: 10px;
+  background: #151515;
+  margin: 0;
+  color: white;
+  min-width: 2.6rem;
+  margin-left: 13px;
+  border-radius: 10px 0 0 10px;
+}
+.countup span[class*="timeRef"] {
+  border-radius: 0 10px 10px 0;
+  margin-left: 0;
+  background: #e8c152;
+  color: black;
+}
+</style>
 
 @media (max-width: 500px) {
   h1 {
