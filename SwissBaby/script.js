@@ -72,3 +72,10 @@ function countUpFromTime(countFrom, id) {
   clearTimeout(countUpFromTime.interval);
   countUpFromTime.interval = setTimeout(function(){ countUpFromTime(countFrom, id); }, 1000);
 }
+
+
+// Show spinner before countdown
+setTimeout(() => {
+  loading.remove();
+  countdown.style.display = 'flex';
+}, 1000);
