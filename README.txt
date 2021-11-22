@@ -1,4 +1,9 @@
 What needs work:
+
+Fix LinkedIn "Featured" thumbnail:
+  https://medium.com/@jamesyhiggs/how-to-add-thumbnail-images-to-the-featured-section-of-your-linkedin-profile-for-web-apps-sites-917346235932
+  
+  
 contact page
   - send message (i think this involvers the backend ex. put, post, etc)
   - map
