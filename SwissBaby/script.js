@@ -26,7 +26,6 @@
 //   const m = Math.floor(diff / 1000 / 60) % 60;
 //   const s = Math.floor(diff / 1000) % 60;
 
-
 //   // Add values to DOM
 // //   weeks.innerHTML = w;
 //   days.innerHTML = d;
@@ -45,37 +44,44 @@
 // // Run every seconds
 // setInterval(updateCountdown, 1000);
 
-window.onload = function() {
-  // Month Day, Year Hour:Minute:Second, id-of-element-container
-  countUpFromTime("Dec 4, 2020 07:23:00", 'countup1'); // ****** Change this line!
+window.onload = function () {
+	// Month Day, Year Hour:Minute:Second, id-of-element-container
+	countUpFromTime('Dec 4, 2020 07:23:00', 'countup1'); // ****** Change this line!
 };
 function countUpFromTime(countFrom, id) {
-  countFrom = new Date(countFrom).getTime();
-  var now = new Date(),
-      countFrom = new Date(countFrom),
-      timeDifference = (now - countFrom);
-    
-  var secondsInADay = 60 * 60 * 1000 * 24,
-      secondsInAHour = 60 * 60 * 1000;
-    
-  days = Math.floor(timeDifference / (secondsInADay) * 1);
-  hours = Math.floor((timeDifference % (secondsInADay)) / (secondsInAHour) * 1);
-  mins = Math.floor(((timeDifference % (secondsInADay)) % (secondsInAHour)) / (60 * 1000) * 1);
-  secs = Math.floor((((timeDifference % (secondsInADay)) % (secondsInAHour)) % (60 * 1000)) / 1000 * 1);
+	countFrom = new Date(countFrom).getTime();
+	var now = new Date(),
+		countFrom = new Date(countFrom),
+		timeDifference = now - countFrom;
 
-  var idEl = document.getElementById(id);
-  idEl.getElementsByClassName('days')[0].innerHTML = days;
-  idEl.getElementsByClassName('hours')[0].innerHTML = hours;
-  idEl.getElementsByClassName('minutes')[0].innerHTML = mins;
-  idEl.getElementsByClassName('seconds')[0].innerHTML = secs;
+	var secondsInADay = 60 * 60 * 1000 * 24,
+		secondsInAHour = 60 * 60 * 1000;
 
-  clearTimeout(countUpFromTime.interval);
-  countUpFromTime.interval = setTimeout(function(){ countUpFromTime(countFrom, id); }, 1000);
+	days = Math.floor((timeDifference / secondsInADay) * 1);
+	hours = Math.floor(((timeDifference % secondsInADay) / secondsInAHour) * 1);
+	mins = Math.floor(
+		(((timeDifference % secondsInADay) % secondsInAHour) / (60 * 1000)) * 1,
+	);
+	secs = Math.floor(
+		((((timeDifference % secondsInADay) % secondsInAHour) % (60 * 1000)) /
+			1000) *
+			1,
+	);
+
+	var idEl = document.getElementById(id);
+	idEl.getElementsByClassName('days')[0].innerHTML = days;
+	idEl.getElementsByClassName('hours')[0].innerHTML = hours;
+	idEl.getElementsByClassName('minutes')[0].innerHTML = mins;
+	idEl.getElementsByClassName('seconds')[0].innerHTML = secs;
+
+	clearTimeout(countUpFromTime.interval);
+	countUpFromTime.interval = setTimeout(function () {
+		countUpFromTime(countFrom, id);
+	}, 1000);
 }
-
 
 // Show spinner before countdown
 setTimeout(() => {
-  loading.remove();
-  countdown.style.display = 'flex';
+	loading.remove();
+	countdown.style.display = 'flex';
 }, 1000);
